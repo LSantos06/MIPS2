@@ -1,0 +1,16 @@
+default: compilar
+
+compilar:
+		gcc -o simuladorMIPS_2.out simuladorMIPS_2.c
+
+rodar:
+		./simuladorMIPS_2.out
+
+testes:
+		gcc -o simuladorMIPS_2_testes.out simuladorMIPS_2_testes.c
+
+testar:
+		./simuladorMIPS_2_testes.out
+
+limpar:
+		rm *.out
