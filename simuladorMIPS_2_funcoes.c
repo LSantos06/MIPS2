@@ -905,10 +905,15 @@ void dump_reg(char format){
         printf("\nDump Registers:\n");
 
         for(indice = 0; indice < 32; indice++){
-            printf("reg[%d] = %d\n", indice, reg[indice]);
+            if(indice == 31){
+                printf("reg[%d] = %d\n", indice, reg[indice]*4);
+            }
+            else{
+                printf("reg[%d] = %d\n", indice, reg[indice]);
+            }
         }
 
-        printf("pc = %d\n", pc);
+        printf("pc = %d\n", pc*4);
         printf("hi = %d\n", hi);
         printf("lo = %d\n", lo);
         // printf("Instrução atual = %d\n", ri);
@@ -918,10 +923,15 @@ void dump_reg(char format){
         printf("\nDump Registers:\n");
 
         for(indice = 0; indice < 32; indice++){
-            printf("reg[%d] = 0x%.8x\n", indice, reg[indice]);
+            if(indice == 31){
+                printf("reg[%d] = 0x%.8x\n", indice, reg[indice]*4);
+            }
+            else{
+                printf("reg[%d] = 0x%.8x\n", indice, reg[indice]);
+            }
         }
 
-        printf("pc = 0x%.8x\n", pc);
+        printf("pc = 0x%.8x\n", pc*4);
         printf("hi = 0x%.8x\n", hi);
         printf("lo = 0x%.8x\n", lo);
         // printf("Instrução atual = 0x%.8x\n", ri);
